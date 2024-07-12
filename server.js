@@ -21,7 +21,7 @@ app.get("/collectibles/:collectibleIndex", (req, res, next) => {
         { name: 'autographed picture of a dog', price: 10 },
         { name: 'vintage 1970s yogurt SOLD AS-IS', price: 0.99 }
       ];
-    if(req.params.collectibleIndex > collectibles.length) {
+    if(req.params.collectibleIndex >= collectibles.length) {
         res.send("This item is not yet in stock. Check back soon!")
     } else {
        res.send(`So, you want the ${collectibles[req.params.collectibleIndex].name}? It can be yours my friend, but only if you have ${collectibles[req.params.collectibleIndex].price} Dollars!`) 
